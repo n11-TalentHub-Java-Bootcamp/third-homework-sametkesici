@@ -3,9 +3,7 @@ package com.bahadirmemis.springboot.mongodb.dto;
 import lombok.Data;
 
 @Data
-public class CustomerDto {
-
-  private String id;
+public class CustomerRegisterDto {
 
   private String name;
 

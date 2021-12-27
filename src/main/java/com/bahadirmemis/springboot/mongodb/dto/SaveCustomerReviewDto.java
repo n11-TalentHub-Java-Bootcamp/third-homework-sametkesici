@@ -1,13 +1,10 @@
 package com.bahadirmemis.springboot.mongodb.dto;
 
 import java.util.Date;
-import java.util.UUID;
 import lombok.Data;
 
 @Data
-public class CustomerReviewDto {
-
-  private String id;
+public class SaveCustomerReviewDto {
 
   private String review;
 

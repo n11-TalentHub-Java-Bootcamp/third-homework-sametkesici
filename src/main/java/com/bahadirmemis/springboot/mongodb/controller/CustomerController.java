@@ -1,7 +1,9 @@
 package com.bahadirmemis.springboot.mongodb.controller;
 
 import com.bahadirmemis.springboot.mongodb.convertor.CustomerConvertor;
+import com.bahadirmemis.springboot.mongodb.convertor.CustomerRegisterConvertor;
 import com.bahadirmemis.springboot.mongodb.dto.CustomerDto;
+import com.bahadirmemis.springboot.mongodb.dto.CustomerRegisterDto;
 import com.bahadirmemis.springboot.mongodb.entity.Customer;
 import com.bahadirmemis.springboot.mongodb.service.CustomerService;
 import java.util.List;
@@ -26,9 +28,13 @@ public class CustomerController {
 
   private final CustomerConvertor customerConvertor;
 
+  private final CustomerRegisterConvertor customerRegisterConvertor;
+
   @PostMapping("")
-  public CustomerDto saveCustomer(@RequestBody CustomerDto customerDto){
-    return customerConvertor.toDto(customerService.saveCustomer(customerConvertor.toEntity(customerDto)));
+  public ResponseEntity<String> saveCustomer(@RequestBody CustomerRegisterDto customerDto){
+    customerConvertor.toDto(customerService.saveCustomer(customerRegisterConvertor.toEntity(customerDto)));
+
+    return ResponseEntity.ok("Kullanıcı basarıyla kaydedildi");
   }
 
   @GetMapping("")

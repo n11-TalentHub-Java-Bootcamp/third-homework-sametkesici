@@ -23,7 +23,7 @@ public class CustomerReviewService {
   }
 
   public CustomerReview getCustomerReviewById(String id) {
-    return customerReviewRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+    return customerReviewRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(id + " bu id ile yorum bulunanamıstır."));
   }
 
   public void deleteCustomerReviewById(String id){

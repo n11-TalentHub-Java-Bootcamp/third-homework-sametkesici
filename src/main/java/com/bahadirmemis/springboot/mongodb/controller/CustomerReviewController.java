@@ -1,7 +1,9 @@
 package com.bahadirmemis.springboot.mongodb.controller;
 
+import com.bahadirmemis.springboot.mongodb.convertor.SaveCustomerReviewConvertor;
 import com.bahadirmemis.springboot.mongodb.dto.CustomerReviewDto;
 import com.bahadirmemis.springboot.mongodb.convertor.CustomerReviewConvertor;
+import com.bahadirmemis.springboot.mongodb.dto.SaveCustomerReviewDto;
 import com.bahadirmemis.springboot.mongodb.entity.CustomerReview;
 import com.bahadirmemis.springboot.mongodb.service.CustomerReviewService;
 import com.bahadirmemis.springboot.mongodb.service.CustomerService;
@@ -26,6 +28,8 @@ public class CustomerReviewController {
 
   private final CustomerReviewConvertor customerReviewConvertor;
 
+  private final SaveCustomerReviewConvertor saveCustomerReviewConvertor;
+
 
   @GetMapping("")
   public List<CustomerReviewDto> findAllCustomerReviews(){
@@ -33,9 +37,9 @@ public class CustomerReviewController {
   }
 
   @PostMapping("")
-  public ResponseEntity<String> saveCustomerReview(@RequestBody CustomerReviewDto customerReviewDto){
+  public ResponseEntity<String> saveCustomerReview(@RequestBody SaveCustomerReviewDto customerReviewDto){
 
-    CustomerReview customerReview = customerReviewConvertor.toEntity(customerReviewDto);
+    CustomerReview customerReview = saveCustomerReviewConvertor.toEntity(customerReviewDto);
     customerReviewService.saveCustomerReview(customerReview);
 
     return ResponseEntity.ok("Kullanıcı yorumu basarıyla kaydedildi");
