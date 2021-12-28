@@ -19,13 +19,11 @@
 
 ## Kullanım
 
-`Öncelikle n11_bootcamp adında bir veritabanı oluşturulmalı ve resources klasöründeki application.properties deki konfigürasyonlar( şifre ve kullanıcı adı) özelleştirilmelidir.`
+`Öncelikle resources klasöründeki application.properties deki konfigürasyonlar( şifre ve kullanıcı adı) özelleştirilmelidir.`
 
-`Tabloları oluşturması amacıyla proje çalıştırılmalıdır.`
+`Daha sonra SpringBootTrainingApplication çalıştırılmalıdır.`
 
-`Veritabanına ise gerekli dataları setlemek için resources klasöründeki all_data_instert.sql ' da bulunan datalar veritabanındaki query tool üzerinde çalıştırılmalıdır.`
-
-`Daha sonra Swagger ( http://localhost:8080/swagger-ui.html ) üzerinde ödev kontrolü yapılabilir.`
+`Daha sonra Swagger ( http://localhost:8080/swagger-ui.html ) üzerinde customer ve customer-review'ın kontrolü yapılabilir.`
 
 
 ## Proje Durumu
