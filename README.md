@@ -19,7 +19,7 @@
 
 ## Kullanım
 
-`Öncelikle resources klasöründeki application.properties deki konfigürasyonlar( şifre ve kullanıcı adı) özelleştirilmelidir.`
+`Öncelikle resources klasöründeki application.properties deki konfigürasyonlar kontrol edilmeli.`
 
 `Daha sonra SpringBootTrainingApplication çalıştırılmalıdır.`
 
